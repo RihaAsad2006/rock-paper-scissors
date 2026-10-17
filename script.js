@@ -1,4 +1,4 @@
-function  getRandomChoice(){
+function  getComputerChoice(){
     let randomChoice = Math.random();
     if(randomChoice < 0.33) {
         return "rock";
@@ -10,4 +10,10 @@ function  getRandomChoice(){
         return "scissor";
     }
 }
-console.log(getRandomChoice());
+console.log(getComputerChoice());
+
+function getHumanChoice(){
+    let humanChoice = prompt("Your turn, rock paper or scissor?)");
+    return humanChoice;
+}
+console.log( getHumanChoice());
