@@ -18,14 +18,16 @@ function getHumanChoice(){
 }
 
 let humanScore = 0;
-let computerChoice = 0;
+let computerScore = 0;
 
-function playRound(humanChoice, computerChoice){
+let playRound= function(humanChoice, computerChoice){
     if(humanChoice=="rock"&&computerChoice=="scissor"||
     humanChoice=="paper"&&computerChoice=="rock" ||
     humanChoice=="scissor"&&computerChoice=="paper"
     ){
          console.log(`Congratulations your choice "${humanChoice}" beats computer's choice "${computerChoice}"`);
+         humanScore++;
+         console.log(`human score is ${humanScore}`);
     }
 
    else if(humanChoice=="rock"&&computerChoice=="rock"||
@@ -38,12 +40,25 @@ function playRound(humanChoice, computerChoice){
     else{
         
          console.log(`OH NO! computer's choice "${computerChoice}" beats your choice "${humanChoice}"`);
+         computerScore++;
+         console.log(`Computer score is ${computerScore}`)
     }
 }
 
-let computerSelection =getComputerChoice();
+
+
+function playGame(playRound){
+    for(let i=0; i<5; i++){
+        let computerSelection =getComputerChoice();
 let humanSelection = getHumanChoice();
-playRound(humanSelection, computerSelection);
+ playRound(humanSelection, computerSelection);
+    }
+}
+
+console.log(playGame(playRound));
+
+
+
 
 
 
