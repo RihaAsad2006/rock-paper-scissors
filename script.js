@@ -10,10 +10,40 @@ function  getComputerChoice(){
         return "scissor";
     }
 }
-console.log(getComputerChoice());
+
 
 function getHumanChoice(){
     let humanChoice = prompt("Your turn, rock paper or scissor?)");
-    return humanChoice;
+    return humanChoice.toLowerCase();
 }
-console.log( getHumanChoice());
+
+let humanScore = 0;
+let computerChoice = 0;
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice=="rock"&&computerChoice=="scissor"||
+    humanChoice=="paper"&&computerChoice=="rock" ||
+    humanChoice=="scissor"&&computerChoice=="paper"
+    ){
+         console.log(`Congratulations your choice "${humanChoice}" beats computer's choice "${computerChoice}"`);
+    }
+
+   else if(humanChoice=="rock"&&computerChoice=="rock"||
+    humanChoice=="paper"&&computerChoice=="paper" ||
+    humanChoice=="scissor"&&computerChoice=="scissor"
+    ){
+         console.log("its a tie!");
+    }
+
+    else{
+        
+         console.log(`OH NO! computer's choice "${computerChoice}" beats your choice "${humanChoice}"`);
+    }
+}
+
+let computerSelection =getComputerChoice();
+let humanSelection = getHumanChoice();
+playRound(humanSelection, computerSelection);
+
+
+
